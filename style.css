@@ -5,8 +5,8 @@
 *{
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
-    margin: 0%;
-    padding: 0%;
+    margin: 0% !important;
+    padding: 0% !important;
     color: #333;
 }
 body{
@@ -17,6 +17,7 @@ body{
 }
 .title{
     height: auto;
+    width: 100%;
     text-align: center;
     font-size: 5rem;
     color: bisque;
@@ -24,20 +25,34 @@ body{
     background-color: #f8a978;
 
 }
-.scoreCol{
-    display: none;
-    height: 15rem;
-    font-size: 5rem;
-    text-align: center;
+/* .scoreCol{
+    display: inline;
+    height: 10rem;
+    position: relative;
+    font-size: larger;
+    text-align: start;
+} */
+.liveScore{
+    border: 2px solid orange;
+    justify-content: flex-start;
+    font-size: 2rem;
+}
+.contentBox{
+    border: 2px solid orange;
+    height:  auto ;
+    align-items: center;
 }
 #c-fluid{
-    padding: 0; 
+    position: relative;
+    padding: 0;
+    height: 35rem;
 }
 canvas{
     border: 5px springgreen solid;
 }
 #row1{
     border : 2px solid green;
+    /* height:30rem; */
     display: flex;
     flex :auto ;
     /* flex-direction: row; */
@@ -58,4 +73,5 @@ canvas{
 img{
     max-width: 100%;
     min-width: 50%;
+    max-height: 35%;
 }
