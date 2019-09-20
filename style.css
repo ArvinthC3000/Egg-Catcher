@@ -10,9 +10,25 @@
     color: #333;
 }
 body{
-    box-sizing: border-box;
-    margin: 0;
+    /* box-sizing: border-box; */
+    margin: 10rem;
     padding: 0;
+
+}
+.title{
+    height: auto;
+    text-align: center;
+    font-size: 5rem;
+    color: bisque;
+    text-shadow: .2rem .2rem 0 rgba(86, 185, 235, 5);
+    background-color: #f8a978;
+
+}
+.scoreCol{
+    display: none;
+    height: 15rem;
+    font-size: 5rem;
+    text-align: center;
 }
 #c-fluid{
     padding: 0; 
@@ -22,12 +38,12 @@ canvas{
 }
 #row1{
     border : 2px solid green;
-    height : 10rem;
     display: flex;
+    flex :auto ;
     /* flex-direction: row; */
     flex-flow: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     background-color: rgb(248, 233, 246);
 }
 .col1{
@@ -35,7 +51,9 @@ canvas{
     border-style: solid;
     border-color: lightcoral;
     align-items: stretch;
-    width: 20%;
+    margin: 0 5%; 
+    /* width: 20%; */
+    /* margin-left: 5%; */
 }
 img{
     max-width: 100%;
