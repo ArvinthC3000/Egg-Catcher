@@ -9,69 +9,29 @@
     padding: 0% !important;
     color: #333;
 }
-body{
-    /* box-sizing: border-box; */
-    margin: 10rem;
-    padding: 0;
-
-}
-.title{
-    height: auto;
+#titleColumn{
     width: 100%;
+    height: auto;
     text-align: center;
-    font-size: 5rem;
+    font-size: 4rem;
     color: bisque;
     text-shadow: .2rem .2rem 0 rgba(86, 185, 235, 5);
     background-color: #f8a978;
-
 }
-/* .scoreCol{
-    display: inline;
-    height: 10rem;
-    position: relative;
-    font-size: larger;
-    text-align: start;
-} */
-.liveScore{
-    border: 2px solid orange;
-    justify-content: flex-start;
-    font-size: 2rem;
-}
-.contentBox{
-    border: 2px solid orange;
-    height:  auto ;
-    align-items: center;
-}
-#c-fluid{
-    position: relative;
-    padding: 0;
-    height: 35rem;
-}
-canvas{
-    border: 5px springgreen solid;
-}
-#row1{
+#scoreColumn{
     border : 2px solid green;
-    /* height:30rem; */
-    display: flex;
-    flex :auto ;
-    /* flex-direction: row; */
-    flex-flow: row;
+    height: auto;
+    align-content: center;
     align-items: center;
-    justify-content: space-around;
-    background-color: rgb(248, 233, 246);
 }
-.col1{
-    /* border- ; */
-    border-style: solid;
-    border-color: lightcoral;
-    align-items: stretch;
-    margin: 0 5%; 
-    /* width: 20%; */
-    /* margin-left: 5%; */
+.text{
+    font-size: 2rem;
+    align-self: center;
+    justify-content: center;
+    /* background-color: azure; */
+    height: auto;
+    padding: 1rem;
 }
-img{
-    max-width: 100%;
-    min-width: 50%;
-    max-height: 35%;
+#hint{
+    text-shadow: .1rem .1rem 0 #905ab4;
 }
