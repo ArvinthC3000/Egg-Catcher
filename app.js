@@ -12,25 +12,35 @@ img.src = 'koli2.0.png';
 let egg = document.createElement('img');
 egg.src = 'halfboil.png';
 
-
+let flag = 0;
 let initialPosition=50;
 let startPosition = initialPosition;
 let strokeHeight = (canvas.height) - 100;
 let basketPosition = 0;
-
+let basketX = 0;
+let basketY = 0;
 let ruins = 0;
+let score = 0;
 
-// animate();
+
+function coords(event) {
+    this.mx = event.clientX;
+    this.my = event.clientY;
+    return basketX = this.mx, basketY = this.my;
+    // var coord = mx + "," + my;
+    // console.log(coord)
+  }
+
 
 function start(){
+    
     requestAnimationFrame(start);
     c.clearRect(0,0,canvas.width,canvas.height);
     c.fillStyle='pink';
     c.fillRect(0,65,canvas.width,10);
-    c.fillStyle = "brown"
+    c.fillStyle = "#badfdb";
     c.fillRect(0,canvas.height-100,canvas.width,150);
-    c.fillStyle="badfdb";
-    // c.ellipse();
+
 
     for(let i=0;i<eggs.length;i++){
         eggs[i].draw();
@@ -41,6 +51,27 @@ function start(){
     c.drawImage(img,(canvas.width*.5)-30,10,60,60);
     c.drawImage(img,(canvas.width*.75)-30,10,60,60);
     // c.drawImage(egg,(canvas.width*.75)-30,500,60,60)
+    c.fillStyle="black";
+    c.beginPath();
+
+    let basket = c.ellipse(this.mx,canvas.height-120,50,25,0,0,Math.PI);
+    c.fill();
+    c.stroke();
+
+        if (eggs[0].crashWith()||
+        eggs[1].crashWith()||
+        eggs[2].crashWith()){
+            flag = flag+1;
+                if (flag === 1){
+                    score = score+1;
+                    document.getElementById("score").innerText = score;
+                    // this.resetSpeed();
+                    console.log(score);
+                }
+        }
+        else{
+            flag = 0;
+        }
     
 }
 
@@ -56,6 +87,7 @@ let eggs =[];
 let egg1 = eggs.push(new CreateEgg((canvas.width*.25),y,majR,minR,angle,deg1,deg2));
 let egg2 = eggs.push(new CreateEgg((canvas.width*.5),y,majR,minR,angle,deg1,deg2));
 let egg3 = eggs.push(new CreateEgg((canvas.width*.75),y,majR,minR,angle,deg1,deg2));
+// console.log(eggs );
 //Floor
 start();
 function CreateEgg(x,y,majR,minR,angle,deg1,deg2){
@@ -78,6 +110,7 @@ function CreateEgg(x,y,majR,minR,angle,deg1,deg2){
     }
 
     this.flow = function(){
+
         if(this.y<canvas.height-100){
             this.y = this.y + dy;
         }
@@ -86,26 +119,35 @@ function CreateEgg(x,y,majR,minR,angle,deg1,deg2){
             document.getElementById('ruins').innerText= ruins;
             this.resetSpeed();
         }
+     
+        this.crashWith = function() {
+            var myleft = this.x;
+            // console.log(myleft);
+            var myright = this.x + this.majorAngle;
+            var mytop = this.y;
+            var mybottom = this.y + this.minorAngle;
+            var otherleft = basketX;
+            var otherright = basketX + 50;
+            var othertop = canvas.height-120;
+            var otherbottom = basketY+ 25;
+            var crash = false;
+            if ((mybottom > othertop) && (myright < otherright) && (myleft > otherleft)) {
+                crash = true;
+                // console.log(mybottom, othertop)
+            }
+            return crash;
+        }
 
     }
+   
+    // if(this.y=canvas.height-120 && (this.mx=this.mx)){
+    //     score +=1;
+    //     console.log(score);
+    // }
+    
     this.resetSpeed =function (){
         this.y = startPosition;
         dy = ((Math.random()*2)+1);
     }
 
-}
-// function eggMotion(){
-//     if (startPosition<strokeHeight){
-//         startPosition+=dx;
-//         console.log(strokeHeight);
-//     }
-// }
-function EggMotion(){
-
-}
-function animate(){
-    requestAnimationFrame(animate);
-    c.beginPath();
-    c.moveTo(strokeHeight,basketPosition);
-    
 }
