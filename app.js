@@ -1,7 +1,9 @@
+
+
 let canvas = document.querySelector('canvas');
 
 canvas.width = window.innerWidth;
-canvas.height  = 0.9 * (window.innerHeight);
+canvas.height  = 0.75 * (window.innerHeight);
 
 let c = canvas.getContext('2d');
 
@@ -23,7 +25,12 @@ let ruins = 0;
 function start(){
     requestAnimationFrame(start);
     c.clearRect(0,0,canvas.width,canvas.height);
-    // eggMotion();
+    c.fillStyle='pink';
+    c.fillRect(0,65,canvas.width,10);
+    c.fillStyle = "brown"
+    c.fillRect(0,canvas.height-100,canvas.width,150);
+    c.fillStyle="badfdb";
+    c.ellipse()
 
     for(let i=0;i<eggs.length;i++){
         eggs[i].draw();
@@ -33,7 +40,7 @@ function start(){
     c.drawImage(img,(canvas.width*.25)-30,10,60,60);
     c.drawImage(img,(canvas.width*.5)-30,10,60,60);
     c.drawImage(img,(canvas.width*.75)-30,10,60,60);
-    c.drawImage(egg,(canvas.width*.75)-30,500,60,60)
+    // c.drawImage(egg,(canvas.width*.75)-30,500,60,60)
     
 }
 
@@ -49,8 +56,7 @@ let eggs =[];
 let egg1 = eggs.push(new CreateEgg((canvas.width*.25),y,majR,minR,angle,deg1,deg2));
 let egg2 = eggs.push(new CreateEgg((canvas.width*.5),y,majR,minR,angle,deg1,deg2));
 let egg3 = eggs.push(new CreateEgg((canvas.width*.75),y,majR,minR,angle,deg1,deg2));
-
-
+//Floor
 start();
 function CreateEgg(x,y,majR,minR,angle,deg1,deg2){
     this.x=x;
@@ -72,10 +78,10 @@ function CreateEgg(x,y,majR,minR,angle,deg1,deg2){
     }
 
     this.flow = function(){
-        if(this.y<canvas.height-150){
+        if(this.y<canvas.height-100){
             this.y = this.y + dy;
         }
-        else if(this.y=canvas.height-150){
+        else if(this.y=canvas.height-100){
             ruins++;
             document.getElementById('ruins').innerText= ruins;
             this.resetSpeed();
