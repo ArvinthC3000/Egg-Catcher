@@ -26,7 +26,8 @@
 }
 .text{
     font-size: 2rem;
-    align-self: center;
+    padding-left: 1rem;
+    /* align-self: center;  */
     justify-content: center;
     /* background-color: azure; */
     height: auto;
@@ -34,4 +35,7 @@
 }
 #hint{
     text-shadow: .1rem .1rem 0 #905ab4;
+    justify-content: center;
+    justify-items: center;
+    align-self: center;
 }

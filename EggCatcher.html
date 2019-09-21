@@ -15,18 +15,18 @@
     <div id="titleColumn">Egg Catcher</div>
     <div class="container-fluid" id="scoreColumn">
         <div class="row">
-            <div class="col-3">
+            <div class="col-5">
                 <div class="d-flex flex-column justify-content-between">
                     <div class="text" >Score: <span id="score">0</span></div>
                     <div class="text" >Ruins: <span id="ruins">0</span></div>
                 </div>
             </div>
             <div class="col text">Hints: <span id="hint">Save all eggs</span></div>
-            <div class="col-4 text" style="text-align: end">Time Remaining: <span id="timer">0:00</span> </div>
+            <div class="col-4 text" style="text-align: end"><span id="timer"></span> </div>
         </div>
     </div>
     <div>
-        <canvas id="canvasColumn"></canvas>
+        <canvas onmousemove="coords(event)" id="canvasColumn"></canvas>
     </div>
     <script src="app.js"></script>
 </body>
