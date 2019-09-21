@@ -30,7 +30,7 @@ function start(){
     c.fillStyle = "brown"
     c.fillRect(0,canvas.height-100,canvas.width,150);
     c.fillStyle="badfdb";
-    c.ellipse()
+    // c.ellipse();
 
     for(let i=0;i<eggs.length;i++){
         eggs[i].draw();
