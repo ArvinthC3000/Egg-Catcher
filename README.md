@@ -2,7 +2,7 @@
 This is a game developed using javascript in canvas.
 
 # Authors
-Ajith C Ravi
+Ajith C Ravi    
 Arvinth C
 
 # Description
