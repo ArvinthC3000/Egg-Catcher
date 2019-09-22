@@ -103,7 +103,7 @@ function CreateEgg(x,y,majR,minR,angle,deg1,deg2){
     this.rotation=angle;
     this.startAngle=deg1;
     this.endAngle=deg2;
-    let dy =((Math.random()*1.5Previous settingS)+1);
+    let dy =((Math.random())+1);
 
     this.draw = function(){
         c.beginPath();
