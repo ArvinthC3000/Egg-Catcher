@@ -65,6 +65,11 @@ function start(){
                 if (flag === 1){
                     score = score+1;
                     document.getElementById("score").innerText = score;
+  
+                    resetSpeed =function (){
+                        y = initialPosition;
+                        dy = ((Math.random()*2)+1);
+                    }
                     console.log(score);
                     resetSpeed();
                 }
@@ -98,7 +103,7 @@ function CreateEgg(x,y,majR,minR,angle,deg1,deg2){
     this.rotation=angle;
     this.startAngle=deg1;
     this.endAngle=deg2;
-    let dy =((Math.random()*2)+1);
+    let dy =((Math.random()*1.5Previous settingS)+1);
 
     this.draw = function(){
         c.beginPath();
@@ -117,7 +122,7 @@ function CreateEgg(x,y,majR,minR,angle,deg1,deg2){
         else if(this.y=canvas.height-100){
             ruins++;
             document.getElementById('ruins').innerText= ruins;
-            resetSpeed();
+            this.resetSpeed();
         }
      
         this.crashWith = function() {
@@ -145,10 +150,8 @@ function CreateEgg(x,y,majR,minR,angle,deg1,deg2){
     //     console.log(score);
     // }
     
-
-}
- function resetSpeed(){
-    CreateEgg().y = startPosition;
-    console.log(flow.y);
-    dy = ((Math.random()*2)+1);
+    this.resetSpeed =function (){
+        this.y = startPosition;
+        dy = ((Math.random()*2)+1);
+    }
 }
