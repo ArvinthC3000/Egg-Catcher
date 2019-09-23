@@ -126,8 +126,9 @@ function CreateEgg(x,y,majR,minR,angle,deg1,deg2){
             var myright = this.x + this.majorAngle;
             var mytop = this.y;
             var mybottom = this.y + this.minorAngle;
-            var otherleft = basketX;
+            var otherleft = basketX - 50;
             var otherright = basketX + 50;
+            console.log(basketX);
             var othertop = canvas.height-120;
             var otherbottom = basketY+ 25;
             var crash = false;
