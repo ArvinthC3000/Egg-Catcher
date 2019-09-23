@@ -34,6 +34,7 @@ function coords(event) {
 
 function start(){
     
+    
     startID = requestAnimationFrame(start);
     c.clearRect(0,0,canvas.width,canvas.height);
     c.fillStyle='pink';
@@ -89,14 +90,10 @@ let egg2 = eggs.push(new CreateEgg((canvas.width*.5),y,majR,minR,angle,deg1,deg2
 let egg3 = eggs.push(new CreateEgg((canvas.width*.75),y,majR,minR,angle,deg1,deg2));
 // console.log(eggs );
 
-// let startGame = setTimeout(start,10000)
+let startGame = setTimeout(start,10000)
 
-let h1 = setTimeout(hint1,10000);
-let h2 = setTimeout(hint2,20000);
-let h4 = setTimeout(hint4,45000);
-let t = setTimeout(stopTheGame,60000);
 
-start();
+
 function CreateEgg(x,y,majR,minR,angle,deg1,deg2){
     this.x=x;
     this.y=y;
@@ -173,3 +170,14 @@ function stopTheGame(){
     cancelAnimationFrame(startID);
     document.getElementById("hint").innerText = "Game Over";
 }
+function dHint(){
+    document.getElementById("hint").innerText = "Save all Eggs";
+}
+let dfult = setTimeout(dHint,10000);
+let h1 = setTimeout(hint1,20000);
+let h2 = setTimeout(hint2,30000);
+let h4 = setTimeout(hint4,45000);
+let t = setTimeout(stopTheGame,60000);
+
+// countdown = 5;
+// document.getElementById("hint").innerText = countdown;
