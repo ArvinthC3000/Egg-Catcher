@@ -65,7 +65,7 @@ function start(){
                 if (flag === 1){
                     score = score+1;
                     document.getElementById("score").innerText = score;
-                    // this.resetSpeed();
+                    ruins--;
                     console.log(score);
                 }
         }
@@ -98,7 +98,7 @@ function CreateEgg(x,y,majR,minR,angle,deg1,deg2){
     this.rotation=angle;
     this.startAngle=deg1;
     this.endAngle=deg2;
-    let dy =((Math.random()*2)+1);
+    let dy =((Math.random()*1)+0.5);
 
     this.draw = function(){
         c.beginPath();
@@ -149,5 +149,4 @@ function CreateEgg(x,y,majR,minR,angle,deg1,deg2){
         this.y = startPosition;
         dy = ((Math.random()*2)+1);
     }
-
 }
