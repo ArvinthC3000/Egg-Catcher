@@ -65,7 +65,7 @@ function start(){
                 if (flag === 1){
                     score = score+1;
                     document.getElementById("score").innerText = score;
-                    ruins--;
+                    // ruins--;
                     console.log(score);
                 }
         }
@@ -128,12 +128,13 @@ function CreateEgg(x,y,majR,minR,angle,deg1,deg2){
             var mybottom = this.y + this.minorAngle;
             var otherleft = basketX - 50;
             var otherright = basketX + 50;
-            console.log(basketX);
+            // console.log(basketX);
             var othertop = canvas.height-120;
             var otherbottom = basketY+ 25;
             var crash = false;
             if ((mybottom > othertop) && (myright < otherright) && (myleft > otherleft)) {
                 crash = true;
+                this.resetSpeed();
                 // console.log(mybottom, othertop)
             }
             return crash;
