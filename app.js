@@ -34,7 +34,7 @@ function coords(event) {
 
 function start(){
     
-    requestAnimationFrame(start);
+    startID = requestAnimationFrame(start);
     c.clearRect(0,0,canvas.width,canvas.height);
     c.fillStyle='pink';
     c.fillRect(0,65,canvas.width,10);
@@ -88,7 +88,14 @@ let egg1 = eggs.push(new CreateEgg((canvas.width*.25),y,majR,minR,angle,deg1,deg
 let egg2 = eggs.push(new CreateEgg((canvas.width*.5),y,majR,minR,angle,deg1,deg2));
 let egg3 = eggs.push(new CreateEgg((canvas.width*.75),y,majR,minR,angle,deg1,deg2));
 // console.log(eggs );
-//Floor
+
+// let startGame = setTimeout(start,10000)
+
+let h1 = setTimeout(hint1,10000);
+let h2 = setTimeout(hint2,20000);
+let h4 = setTimeout(hint4,45000);
+let t = setTimeout(stopTheGame,60000);
+
 start();
 function CreateEgg(x,y,majR,minR,angle,deg1,deg2){
     this.x=x;
@@ -151,4 +158,18 @@ function CreateEgg(x,y,majR,minR,angle,deg1,deg2){
         this.y = startPosition;
         dy = ((Math.random()*2)+1);
     }
+}
+function hint1(){
+    document.getElementById("hint").innerText = "Look who's doing a good job";
+}
+function hint2(){
+    document.getElementById("hint").innerText = "You are doing your best";
+}
+function hint4(){
+    document.getElementById("hint").innerText = "Keep the pace on. 15 Second more";
+}
+
+function stopTheGame(){
+    cancelAnimationFrame(startID);
+    document.getElementById("hint").innerText = "Game Over";
 }
