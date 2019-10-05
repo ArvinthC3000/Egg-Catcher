@@ -10,7 +10,8 @@ let c = canvas.getContext('2d');
 let img = document.createElement('img');
 img.src = 'koli2.0.png';
 let egg = document.createElement('img');
-egg.src = 'halfboil.png';
+egg.src = 'brokenEgg.png';
+egg.style.backgroundColor = 'none';
 
 let flag = 0;
 let initialPosition=50;
@@ -21,6 +22,8 @@ let basketX = 0;
 let basketY = 0;
 let ruins = 0;
 let score = 0;
+let eggMissFlag = 0;
+let halfBoilLocation = 0;
 
 
 function coords(event) {
@@ -37,9 +40,9 @@ function start(){
     
     startID = requestAnimationFrame(start);
     c.clearRect(0,0,canvas.width,canvas.height);
-    c.fillStyle='pink';
+    c.fillStyle='#835535';
     c.fillRect(0,65,canvas.width,10);
-    c.fillStyle = "#badfdb";
+    c.fillStyle = "#835535";
     c.fillRect(0,canvas.height-100,canvas.width,150);
 
 
@@ -51,6 +54,8 @@ function start(){
     c.drawImage(img,(canvas.width*.25)-30,10,60,60);
     c.drawImage(img,(canvas.width*.5)-30,10,60,60);
     c.drawImage(img,(canvas.width*.75)-30,10,60,60);
+
+    c.drawImage(egg,halfBoilLocation,canvas.height-100,50,50);
     // c.drawImage(egg,(canvas.width*.75)-30,500,60,60)
     c.fillStyle="black";
     c.beginPath();
@@ -121,6 +126,8 @@ function CreateEgg(x,y,majR,minR,angle,deg1,deg2){
         else if(this.y=canvas.height-100){
             ruins++;
             document.getElementById('ruins').innerText= ruins;
+            eggMissFlag = 1;
+            halfBoilLocation = this.x;
             this.resetSpeed();
         }
      
