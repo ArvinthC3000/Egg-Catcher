@@ -1,5 +1,5 @@
 # Egg-Catcher
-This is a game. There are three hens, who are really good in laying eggs, on a loft. Poor hens couldn't hold the eggs they lay. There comes the hero who saves the eggs using a basket. Eggs succesfully saved will add up the points while missed will add up the ruins.
+This is a game. There are three hens on a loft which are really good in laying eggs. Poor hens can't hold the eggs they lay. There comes the hero who saves those falling eggs using a basket. Eggs succesfully saved will add up the points while missed will add up the ruins.
 
 ## Getting Started
 * Click 'Clone or download' button
@@ -7,6 +7,7 @@ This is a game. There are three hens, who are really good in laying eggs, on a l
 * Extract and enjoy
 
 If it feels irresistible, click the link below
+
 https://arvinthc3000.github.io/Egg-Catcher/
 
 Ajith C Ravi    
