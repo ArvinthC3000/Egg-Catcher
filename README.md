@@ -1,7 +1,14 @@
-# EggCatcher
-This is a game developed using javascript in canvas.
+# Egg-Catcher
+This is a game. There are three hens, who are really good in laying eggs, on a loft. Poor hens couldn't hold the eggs they lay. There comes the hero who saves the eggs using a basket. Eggs succesfully saved will add up the points while missed will add up the ruins.
 
-# Authors
+## Getting Started
+* Click 'Clone or download' button
+* Click Download ZIP
+* Extract and enjoy
+
+If it feels irresistible, click the link below
+https://arvinthc3000.github.io/Egg-Catcher/
+
 Ajith C Ravi    
 Arvinth C
 
