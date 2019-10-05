@@ -25,6 +25,6 @@ Does it feel irresistable? Why to wait, just click [here](https://arvinthc3000.g
 
 ## Authors
 Do check our profiles by clicking on our names below.
-Follow us for more updates
-[Ajith C Ravi](https://github.com/ajithcravi)
-[Arvinth C](https://github.com/ArvinthC3000)
+Follow us for more updates.
+* [Ajith C Ravi](https://github.com/ajithcravi)
+* [Arvinth C](https://github.com/ArvinthC3000)
