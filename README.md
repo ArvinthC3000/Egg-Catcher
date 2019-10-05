@@ -2,10 +2,10 @@
 Yeah you guessed it right!!! it is a game. Basically there are three egg-laying hens on a loft. Poor hens can't hold the eggs they lay. There comes our hero who saves those falling eggs using a basket. Eggs succesfully saved will increase his points while missed eggs will end up as ruins.
 
 ## How to play?
+* The game will last for 60 seconds.
 * Catch the eggs before they fall on the floor.
 * Use mouse to move the basket horizontally.
 * There is no vertical movements.
-* The game will last for 60 seconds.
 
 ## Scoring
 * Succesful catch adds up a point on eggs section.
