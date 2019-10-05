@@ -66,7 +66,6 @@ function start(){
                 if (flag === 1){
                     score = score+1;
                     document.getElementById("score").innerText = score;
-                    console.log(score);
                 }
         }
         else{
@@ -160,7 +159,7 @@ function hint4(){
 function stopTheGame(){
     cancelAnimationFrame(startID);
     document.getElementById("hint").innerText = "Game Over";
-    alert('Game over.\nYou did a great work')
+    alert('Game over.\nYou did a great work\nYour score is '+score)
 }
 function dHint(){
     document.getElementById("hint").innerText = "Save all Eggs";
