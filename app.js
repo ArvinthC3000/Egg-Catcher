@@ -27,8 +27,6 @@ function coords(event) {
     this.mx = event.clientX;
     this.my = event.clientY;
     return basketX = this.mx, basketY = this.my;
-    // var coord = mx + "," + my;
-    // console.log(coord)
   }
 
 
@@ -51,7 +49,6 @@ function start(){
     c.drawImage(img,(canvas.width*.25)-30,10,60,60);
     c.drawImage(img,(canvas.width*.5)-30,10,60,60);
     c.drawImage(img,(canvas.width*.75)-30,10,60,60);
-    // c.drawImage(egg,(canvas.width*.75)-30,500,60,60)
     c.fillStyle="black";
     c.beginPath();
 
@@ -66,7 +63,6 @@ function start(){
                 if (flag === 1){
                     score = score+1;
                     document.getElementById("score").innerText = score;
-                    // ruins--;
                     console.log(score);
                 }
         }
@@ -82,13 +78,11 @@ let minR = 7;
 let angle= 0;
 let deg1 = 0;
 let deg2 = 2*Math.PI;
-// let dy =((Math.random()*2)+1);
 
 let eggs =[];
 let egg1 = eggs.push(new CreateEgg((canvas.width*.25),y,majR,minR,angle,deg1,deg2));
 let egg2 = eggs.push(new CreateEgg((canvas.width*.5),y,majR,minR,angle,deg1,deg2));
 let egg3 = eggs.push(new CreateEgg((canvas.width*.75),y,majR,minR,angle,deg1,deg2));
-// console.log(eggs );
 
 let startGame = setTimeout(start,10000)
 
@@ -110,7 +104,6 @@ function CreateEgg(x,y,majR,minR,angle,deg1,deg2){
         c.fillStyle='pink';
         c.fill();
         c.stroke();
-        // this.flow();
     }
 
     this.flow = function(){
@@ -125,31 +118,24 @@ function CreateEgg(x,y,majR,minR,angle,deg1,deg2){
         }
      
         this.crashWith = function() {
-            var myleft = this.x;
-            // console.log(myleft);
-            var myright = this.x + this.majorAngle;
-            var mytop = this.y;
-            var mybottom = this.y + this.minorAngle;
-            var otherleft = basketX - 50;
-            var otherright = basketX + 50;
-            // console.log(basketX);
-            var othertop = canvas.height-120;
-            var otherbottom = basketY+ 25;
-            var crash = false;
+            let myleft = this.x;
+            let myright = this.x + this.majorAngle;
+            let mytop = this.y;
+            let mybottom = this.y + this.minorAngle;
+            let otherleft = basketX - 50;
+            let otherright = basketX + 50;
+            let othertop = canvas.height-120;
+            let otherbottom = basketY+ 25;
+            let crash = false;
             if ((mybottom > othertop) && (myright < otherright) && (myleft > otherleft)) {
                 crash = true;
                 this.resetSpeed();
-                // console.log(mybottom, othertop)
             }
             return crash;
         }
 
     }
    
-    // if(this.y=canvas.height-120 && (this.mx=this.mx)){
-    //     score +=1;
-    //     console.log(score);
-    // }
     
     this.resetSpeed =function (){
         this.y = startPosition;
@@ -163,12 +149,13 @@ function hint2(){
     document.getElementById("hint").innerText = "You are doing your best";
 }
 function hint4(){
-    document.getElementById("hint").innerText = "Keep the pace on. 15 Second more";
+    document.getElementById("hint").innerText = "Keep the pace on. You've completed 75%";
 }
 
 function stopTheGame(){
     cancelAnimationFrame(startID);
     document.getElementById("hint").innerText = "Game Over";
+    alert('Game over.\nYou did a great work')
 }
 function dHint(){
     document.getElementById("hint").innerText = "Save all Eggs";
@@ -178,6 +165,3 @@ let h1 = setTimeout(hint1,20000);
 let h2 = setTimeout(hint2,30000);
 let h4 = setTimeout(hint4,45000);
 let t = setTimeout(stopTheGame,60000);
-
-// countdown = 5;
-// document.getElementById("hint").innerText = countdown;
