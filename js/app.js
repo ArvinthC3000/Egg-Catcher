@@ -85,7 +85,7 @@ let egg1 = eggs.push(new CreateEgg((canvas.width*.25),y,majR,minR,angle,deg1,deg
 let egg2 = eggs.push(new CreateEgg((canvas.width*.5),y,majR,minR,angle,deg1,deg2));
 let egg3 = eggs.push(new CreateEgg((canvas.width*.75),y,majR,minR,angle,deg1,deg2));
 
-let startGame = setTimeout(start,0000)
+let startGame = setTimeout(start,10000)
 
 
 
@@ -163,7 +163,7 @@ function stopTheGame(){
 function dHint(){
     document.getElementById("hint").innerText = "Save all Eggs";
 }
-let dfult = setTimeout(dHint,0000);
+let dfult = setTimeout(dHint,10000);
 let h1 = setTimeout(hint1,20000);
 let h2 = setTimeout(hint2,30000);
 let h4 = setTimeout(hint4,45000);
