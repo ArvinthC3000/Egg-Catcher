@@ -1,5 +1,4 @@
 
-
 let canvas = document.querySelector('canvas');
 
 canvas.width = window.innerWidth;
@@ -8,9 +7,9 @@ canvas.height  = 0.75 * (window.innerHeight);
 let c = canvas.getContext('2d');
 
 let img = document.createElement('img');
-img.src = 'koli2.0.png';
+img.src = '../images/koli2.0.png';
 let egg = document.createElement('img');
-egg.src = 'brokenEgg.png';
+egg.src = '../images/brokenEgg.png';
 egg.style.backgroundColor = 'none';
 
 let flag = 0;
@@ -66,7 +65,6 @@ function start(){
                 if (flag === 1){
                     score = score+1;
                     document.getElementById("score").innerText = score;
-                    console.log(score);
                 }
         }
         else{
@@ -160,7 +158,7 @@ function hint4(){
 function stopTheGame(){
     cancelAnimationFrame(startID);
     document.getElementById("hint").innerText = "Game Over";
-    alert('Game over.\nYou did a great work')
+    alert('Game over.\nYou did a great work\nYour score is '+score)
 }
 function dHint(){
     document.getElementById("hint").innerText = "Save all Eggs";
