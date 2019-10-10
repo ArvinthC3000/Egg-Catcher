@@ -7,9 +7,9 @@ canvas.height  = 0.75 * (window.innerHeight);
 let c = canvas.getContext('2d');
 
 let img = document.createElement('img');
-img.src = 'koli2.0.png';
+img.src = '../images/koli2.0.png';
 let egg = document.createElement('img');
-egg.src = 'brokenEgg.png';
+egg.src = '../images/brokenEgg.png';
 egg.style.backgroundColor = 'none';
 
 let flag = 0;
