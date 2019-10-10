@@ -12,22 +12,10 @@
 </head>
 
 <body>
-    <div id="titleColumn">Egg Catcher</div>
-    <div class="container-fluid" id="scoreColumn">
-        <div class="row">
-            <div class="col-5">
-                <div class="d-flex flex-column justify-content-between">
-                    <div class="text" >Score: <span id="score">0</span></div>
-                    <div class="text" >Ruins: <span id="ruins">0</span></div>
-                </div>
+            <div id="home">
+                <h1>EggCatcher</h1>
+                <a class="btn" id="btn" href="./game.html">Play</a>
             </div>
-            <div class="col text">Hints: <span id="hint">Your game will start in 10sec. Look here for hints. Now go help the chickens</span></div>
-            <div class="col-4 text" style="text-align: end"><span id="timer"></span> </div>
         </div>
-    </div>
-    <div>
-        <canvas onmousemove="coords(event)" id="canvasColumn"></canvas>
-    </div>
-    <script src="app.js"></script>
 </body>
 </html>
