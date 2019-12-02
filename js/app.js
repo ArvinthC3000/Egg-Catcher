@@ -1,4 +1,3 @@
-
 let canvas = document.querySelector('canvas');
 
 canvas.width = window.innerWidth;
@@ -32,9 +31,7 @@ function coords(event) {
   }
 
 
-function start(){
-    
-    
+function start(){  
     startID = requestAnimationFrame(start);
     c.clearRect(0,0,canvas.width,canvas.height);
     c.fillStyle='#835535';
